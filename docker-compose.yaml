@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:12.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: test 
+      POSTGRES_PASSWORD: test 
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/lib/postgresql/data
+      - type: bind
+        read_only: true
+        source: ./initdb.d
+        target: /docker-entrypoint-initdb.d
