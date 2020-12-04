@@ -91,8 +91,6 @@ const main = async () => {
   const postNormal = postNormalRepo.create({
     id: 2,
     content: 'Hello!',
-    createdAt: new Date(),
-    updatedAt: new Date(),
   })
   console.log("Saving createdAt:  ", postNormal.createdAt)
   console.log("Saving updatedAt:  ", postNormal.updatedAt)
@@ -111,8 +109,6 @@ const main = async () => {
   const post = postRepo.create({
     id: 3,
     content: 'Hello!',
-    createdAt: new Date().getTime(),
-    updatedAt: new Date().getTime(),
   })
   console.log("Saving createdAt:  ", post.createdAt)
   console.log("Saving updatedAt:  ", post.updatedAt)
